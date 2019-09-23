@@ -137,7 +137,6 @@ public class Main {
 
         // ^ Tutaj bez, w poprzednim z.
 
-
 //        Scanner scanner = new Scanner(System.in);
 //        String produkt;
 //        do {
@@ -188,11 +187,9 @@ public class Main {
 //            System.out.println("  - " + produkt);
 //        }
 
-
         //2.
         //Utwórz tablicę przechowującą wartości typu int o rozmiarze zadanym z konsoli. Wypełnij
         //ją wartościami wewnątrz pętli for. Zwróć sumę tych wartości.
-
 
 //        Scanner scanner = new Scanner(System.in);
 //        System.out.println("Podaj ilość składników w tabeli:");
@@ -210,26 +207,100 @@ public class Main {
 //        }
 //        System.out.println("Suma wprowadzonych skłądników wynosi: " + sumaSkladnikow);
 
-
         //3.
         //Stwórz tablicę zawierającą 5 imion. Wewnątrz pętli for each dopisuj imiona do zmiennej
         //typu String, oddzielając je przecinkami. Wyświetl utworzony łańcuch znaków. Np.
         //„Małgorzata, Jan,
 
-        Scanner scanner = new Scanner(System.in);
-        String[] imiona = new String[5];
-
-        for (int i=0; i<5; i++) {
-            imiona[i] = (scanner.nextLine() + ",");
-        }
-        for (String imie : imiona) {
-            System.out.print(imie);
-        }
-
-
+//        Scanner scanner = new Scanner(System.in);
+//        int iloscImion = 5;
+//        String[] imiona = new String[iloscImion];
+//
+//        for (int i=0; i<iloscImion; i++) {
+//            System.out.println("Podaj imię:");
+//            String imie = scanner.nextLine();
+//            if (i < (iloscImion - 1)) {
+//                imiona[i] = (imie + ", ");
+//            } else {
+//                imiona[i] = imie;
+//            }
+//        }
+//        for (String imie : imiona) {
+//            System.out.print(imie);
+//        }
 
         //4.
         //4.*Jak wyżej, ale dopisuj tylko imiona, które składają się z mniej, niż 5 znaków.
+
+//        Scanner scanner = new Scanner(System.in);
+//        int iloscImion = 5;
+//        int dlugoscImienia = 4;
+//
+//
+//        String[] imiona = new String[iloscImion];
+//
+//        for (int i=0; i<iloscImion; i++) {
+//            System.out.println("Podaj imię (max 4 litery):");
+//            String imie = scanner.nextLine();
+//            while (imie.length() > dlugoscImienia) {
+//                System.out.println("Imię jest za długie. Spróbuj ponownie:");
+//                imie = scanner.nextLine();
+//            }
+//            if (i < (iloscImion - 1)) {
+//                imiona[i] = (imie + ", ");
+//            } else {
+//                imiona[i] = imie;
+//            }
+//        }
+//        for (String imie : imiona) {
+//            System.out.print(imie);
+//        }
+
+////////// Zadania str. 53
+
+        //1.
+        //Napisz program, który dla zadanej tablicy typu int zwraca:
+        //a) Największą wartość
+        //b) Najmniejszą wartość
+        //c) Sumę wszystkich wartości
+        //d) *Wartość średnią
+        //e) *Medianę
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj ilość składników w tabeli:");
+        int dlugoscTabeli = scanner.nextInt();
+        int[] tablicaWartosci = new int[dlugoscTabeli];
+        double sumaSkladnikow = 0.0;
+        int numerArgumentuTabeli = 1;
+        int maxWartosc = Integer.MIN_VALUE;
+        int minWartosc = Integer.MAX_VALUE;
+
+        for (int skladnik : tablicaWartosci) {
+            System.out.println("Podaj " + numerArgumentuTabeli + ". składnik:");
+            skladnik = scanner.nextInt();
+            System.out.println(skladnik);
+            sumaSkladnikow = sumaSkladnikow + skladnik;
+            if (maxWartosc < skladnik) {
+                maxWartosc = skladnik;
+            }
+            if (minWartosc > skladnik) {
+                minWartosc = skladnik;
+            }
+            numerArgumentuTabeli++;
+        }
+
+        System.out.println("Największa podana wartość to: " + maxWartosc);
+        System.out.println("Najmniejsza podana wartość to: " + minWartosc);
+        System.out.println("Suma wprowadzonych skłądników wynosi: " + sumaSkladnikow);
+        System.out.println("średnia wprowadzonych skłądników wynosi: " + sumaSkladnikow / dlugoscTabeli);
+
+
+        //2.
+        //Napisz program, który zwraca w postaci tablicy zbiór wszystkich liczb mniejszych od
+        //zadanej przez użytkownika liczby oraz:
+        //a) Podzielnych przez 2
+        //b) Podzielnych przez 3
+        //c) *Podzielnych przez zadaną przez użytkownika liczbę
 
 
     }
